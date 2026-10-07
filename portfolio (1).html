@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Christian Ray | Portfolio</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        gray: {
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            800: '#1f2937',
+                            900: '#111827',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fcfcfc;
+            color: #111827;
+        }
+        ::selection {
+            background: #111827;
+            color: #fcfcfc;
+        }
+        .hover-underline {
+            text-decoration: none;
+            position: relative;
+        }
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-gray-900 selection:text-white">
+
+    <div class="w-full max-w-2xl mx-auto px-5 py-10 md:py-16 md:px-8 flex-grow">
+        
+        <!-- Top Navigation -->
+        <nav class="flex justify-end mb-10 md:mb-16">
+            <button id="tar-trigger" class="font-mono text-xs sm:text-sm text-gray-500 hover:text-gray-900 transition-colors focus:outline-none flex items-center gap-2 group">
+                <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity -ml-6 absolute" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                christianray.me/links
+            </button>
+        </nav>
+
+        <!-- Bio Header -->
+        <header class="mb-12 md:mb-16">
+            <h1 class="text-lg font-semibold mb-4 tracking-tight text-gray-900">Christian Ray</h1>
+            <div class="space-y-2 text-[15px] sm:text-base text-gray-600 leading-relaxed">
+                <p><span class="font-medium text-gray-900">Software Engineer</span> based in Charlotte, NC.</p>
+                <p>I focus on building clean, efficient software—ranging from robust web applications and RAG systems to low-level integrations.</p>
+            </div>
+        </header>
+
+        <main class="space-y-12 md:space-y-16">
+            
+            <!-- Projects Section -->
+            <section id="projects">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Selected Works</h2>
+                
+                <div class="space-y-4">
+                    <!-- Project 1 -->
+                    <a href="https://github.com/CARay1502/CyanGuard" target="_blank" class="group block p-4 -mx-4 rounded-xl hover:bg-gray-100/50 transition-all duration-300 transform hover:scale-[1.01]">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1.5 gap-1 sm:gap-4">
+                            <h3 class="font-medium text-gray-900 flex items-center gap-2">
+                                CyanGuard - LPL Financial 2026 Hackathon
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </h3>
+                            <span class="text-xs font-mono text-gray-400 shrink-0">AWS Cloud + Python + LLM</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed pr-4">
+                            An AI Compliance Auditor tool, designed to integrate with LPL's Cyan AI Agent tooling to provide second layer prompt FINRA & SEC compliance. 
+                            Utilizes AWS Cloud services: Lambda, Bedrock, DynamoDB, IAM, SnapStart and SNS protocal. 
+                        </p>
+                    </a>
+
+                    <!-- Project 2 -->
+                    <a href="https://github.com/CARay1502/RAG-models" target="_blank" class="group block p-4 -mx-4 rounded-xl hover:bg-gray-100/50 transition-all duration-300 transform hover:scale-[1.01]">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1.5 gap-1 sm:gap-4">
+                            <h3 class="font-medium text-gray-900 flex items-center gap-2">
+                                Osteofibrosis Dysplasia RAG Research Model
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </h3>
+                            <span class="text-xs font-mono text-gray-400 shrink-0">GCP + RAG</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed pr-4">
+                            Engineered a Retrieval Augmented Generation (RAG) pipeline to pair user queries with embedded Osteafibrosis Dysplasia research data for context specific LLM outputs. Utilizes Google Cloud Platform (GCP) VectorEmbedding, Langchain (InMemoryVectorStorage), FastAPI and Google Gemini API. 
+                        </p>
+                    </a>
+
+                    <!-- Project 3 -->
+                    <a href="https://github.com/CARay1502/DRIP-ML-Project" target="_blank" class="group block p-4 -mx-4 rounded-xl hover:bg-gray-100/50 transition-all duration-300 transform hover:scale-[1.01]">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1.5 gap-1 sm:gap-4">
+                            <h3 class="font-medium text-gray-900 flex items-center gap-2">
+                                Disaster Response Inventory Prediction 
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-gray-900 group-hover:translate-x-1 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </h3>
+                            <span class="text-xs font-mono text-gray-400 shrink-0">Python + NumPy + Pandas</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed pr-4">
+                            An application designed for retail home improvement stores to identify demand for essential inventory during weather-related disasters. Utilizes Python, Pandas, NumPy and Common ML Algorithms with NOAA Historical Weather data and Synthetic retail store inventory data to draw predictions based on weather conditions. 
+                        </p>
+                    </a>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Education</h2>
+                
+                <div class="space-y-5">
+                    <div class="group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+                            <h3 class="font-medium text-gray-900 break-words">B.A. in Computer Science</h3>
+                            <span class="text-sm text-gray-500 shrink-0">Exp. May 2027</span>
+                        </div>
+                        <p class="text-sm font-mono text-gray-400 mt-1">University of North Carolina at Charlotte</p>
+                    </div>
+                    
+                    <div class="group">
+                        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+                            <h3 class="font-medium text-gray-900 break-words">A.A.S. in Computer Science</h3>
+                            <span class="text-sm text-gray-500 shrink-0">Completed</span>
+                        </div>
+                        <p class="text-sm font-mono text-gray-400 mt-1">Gaston College</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="debug-mode" class="pt-2">
+                <div class="flex items-baseline justify-between mb-4">
+                    <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400">Debug Mode</h2>
+                    <span id="score-display" class="text-xs font-mono text-gray-500">Squashed: 0</span>
+                </div>
+                
+                <!-- Fixed relative container ensuring canvas scales properly -->
+                <div class="relative w-full h-56 sm:h-64 border border-gray-200 rounded-xl bg-white overflow-hidden shadow-sm">
+                    
+                    <!-- Overlay -->
+                    <div id="game-overlay" class="absolute inset-0 bg-[#fcfcfc]/90 flex flex-col items-center justify-center z-10 transition-opacity duration-300">
+                        <button id="start-game" class="font-mono text-sm px-5 py-2.5 bg-white border border-gray-200 text-gray-900 rounded hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2">
+                            Initialize
+                        </button>
+                    </div>
+                    
+                    <!-- Controls -->
+                    <div id="game-controls" class="absolute top-2 right-2 flex gap-1 z-20 opacity-0 pointer-events-none transition-opacity duration-300">
+                        <button id="restart-game" class="p-2 text-gray-400 hover:text-gray-900 bg-white/80 rounded-md backdrop-blur-sm focus:outline-none transition-colors" aria-label="Restart Game">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        </button>
+                        <button id="end-game" class="p-2 text-gray-400 hover:text-red-500 bg-white/80 rounded-md backdrop-blur-sm focus:outline-none transition-colors" aria-label="End Game">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+
+                    <!-- Game Canvas: touch-none prevents mobile scrolling over it -->
+                    <canvas id="bug-canvas" class="w-full h-full block cursor-crosshair touch-none"></canvas>
+                </div>
+            </section>
+
+            <section id="contact">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-6">Get in touch</h2>
+                <a href="mailto:contact.chrisiscoding@gmail.com" class="inline-block text-[15px] sm:text-base text-gray-900 font-medium hover-underline pb-0.5 border-b border-gray-200 hover:border-transparent transition-all break-all">
+                    contact.chrisiscoding@gmail.com
+                </a>
+            </section>
+
+        </main>
+
+        <footer class="mt-16 md:mt-20 pt-8 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between text-gray-400 gap-5 sm:gap-0">
+            <span class="text-xs font-mono">&copy; 2026 Christian Ray</span>
+            <div class="flex items-center gap-5">
+                <a href="https://github.com/CARay1502" target="_blank" class="hover:text-gray-900 transition-colors" aria-label="GitHub">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/christian-ray-" target="_blank" class="hover:text-gray-900 transition-colors" aria-label="LinkedIn">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                </a>
+                <a href="https://instagram.com/chris.is.coding" target="_blank" class="hover:text-gray-900 transition-colors" aria-label="Instagram">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.482c2.146 0 2.398.01 3.246.048.78.036 1.203.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.847.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.246.047s-2.404-.009-3.246-.047c-.78-.036-1.203-.166-1.486-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                </a>
+                <a href="https://tiktok.com/@chris.is.coding" target="_blank" class="hover:text-gray-900 transition-colors" aria-label="TikTok">
+                    <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/></svg>
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="tar-overlay" class="fixed inset-0 bg-[#fcfcfc]/95 backdrop-blur-md z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out">
+        <button id="close-tar" class="absolute top-6 right-6 sm:top-10 sm:right-10 font-mono text-sm text-gray-500 hover:text-gray-900 hover:line-through transition-all p-2 focus:outline-none">
+            [x] close
+        </button>
+
+        <div class="w-full max-w-sm px-6 text-center">
+            <div id="extracting-state" class="font-mono text-sm text-gray-400 flex flex-col items-center gap-4">
+                <div class="w-5 h-5 border-2 border-gray-200 border-t-gray-900 rounded-full animate-spin"></div>
+                <p>> unpacking christian.tar</p>
+            </div>
+
+            <div id="links-state" class="hidden flex flex-col gap-4 w-full opacity-0 transform translate-y-4 transition-all duration-700 ease-out">
+                <h2 class="text-xs font-mono uppercase tracking-widest text-gray-400 mb-2">Network Archive</h2>
+                
+                <a href="https://github.com/CARay1502" target="_blank" class="flex items-center justify-center gap-3 w-full py-3 border border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg transition-all font-medium text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path></svg>
+                    GitHub
+                </a>
+                
+                <a href="https://linkedin.com/in/christian-ray-" target="_blank" class="flex items-center justify-center gap-3 w-full py-3 border border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg transition-all font-medium text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
+                    LinkedIn
+                </a>
+
+                <a href="https://instagram.com/chris.is.coding" target="_blank" class="flex items-center justify-center gap-3 w-full py-3 border border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg transition-all font-medium text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 1.482c2.146 0 2.398.01 3.246.048.78.036 1.203.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.847.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.246.047s-2.404-.009-3.246-.047c-.78-.036-1.203-.166-1.486-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/></svg>
+                    Instagram
+                </a>
+                
+                <a href="https://tiktok.com/@chris.is.coding" target="_blank" class="flex items-center justify-center gap-3 w-full py-3 border border-gray-200 hover:border-gray-900 hover:bg-gray-900 hover:text-white rounded-lg transition-all font-medium text-sm">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 16 16"><path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/></svg>
+                    TikTok
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const trigger = document.getElementById('tar-trigger');
+            const overlay = document.getElementById('tar-overlay');
+            const closeBtn = document.getElementById('close-tar');
+            const extractingState = document.getElementById('extracting-state');
+            const linksState = document.getElementById('links-state');
+            let extractTimer, showTimer;
+
+            trigger.addEventListener('click', () => {
+                overlay.classList.remove('pointer-events-none', 'opacity-0');
+                overlay.classList.add('opacity-100');
+                extractingState.classList.remove('hidden');
+                linksState.classList.add('hidden', 'opacity-0', 'translate-y-4');
+                linksState.classList.remove('opacity-100', 'translate-y-0');
+
+                extractTimer = setTimeout(() => {
+                    extractingState.classList.add('hidden');
+                    linksState.classList.remove('hidden');
+                    showTimer = setTimeout(() => {
+                        linksState.classList.remove('opacity-0', 'translate-y-4');
+                        linksState.classList.add('opacity-100', 'translate-y-0');
+                    }, 50);
+                }, 1000);
+            });
+
+            const closeModal = () => {
+                overlay.classList.remove('opacity-100');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                clearTimeout(extractTimer);
+                clearTimeout(showTimer);
+            };
+
+            closeBtn.addEventListener('click', closeModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('opacity-100')) closeModal();
+            });
+
+            const canvas = document.getElementById('bug-canvas');
+            const ctx = canvas.getContext('2d');
+            const startGameBtn = document.getElementById('start-game');
+            const gameOverlay = document.getElementById('game-overlay');
+            const scoreDisplay = document.getElementById('score-display');
+            const gameControls = document.getElementById('game-controls');
+            const restartGameBtn = document.getElementById('restart-game');
+            const endGameBtn = document.getElementById('end-game');
+            
+            let score = 0, bugs = [], particles = [], gameActive = false, loopId = null;
+
+            // Ensures internal canvas resolution strictly matches the CSS width/height to prevent scaling distortion
+            function resizeCanvas() {
+                const rect = canvas.parentElement.getBoundingClientRect();
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+                bugs.forEach(b => {
+                    b.x = Math.max(b.size, Math.min(canvas.width - b.size, b.x));
+                    b.y = Math.max(b.size, Math.min(canvas.height - b.size, b.y));
+                });
+            }
+            window.addEventListener('resize', resizeCanvas);
+            setTimeout(resizeCanvas, 50);
+
+            class Particle {
+                constructor(x, y, color, speed, life, size) {
+                    this.x = x; this.y = y; this.color = color;
+                    const angle = Math.random() * Math.PI * 2;
+                    const v = Math.random() * speed;
+                    this.vx = Math.cos(angle) * v; this.vy = Math.sin(angle) * v;
+                    this.life = life; this.maxLife = life; this.size = size;
+                }
+                update() { this.x += this.vx; this.y += this.vy; this.life--; }
+                draw() {
+                    ctx.globalAlpha = Math.max(0, this.life / this.maxLife);
+                    ctx.fillStyle = this.color;
+                    ctx.fillRect(this.x, this.y, this.size, this.size);
+                    ctx.globalAlpha = 1;
+                }
+            }
+
+            class Bug {
+                constructor() {
+                    const r = Math.random();
+                    if (r < 0.05) this.type = 'rainbow';
+                    else if (r < 0.25) this.type = 'red';
+                    else this.type = 'normal';
+
+                    this.size = 3 + Math.random() * 3;
+                    this.x = Math.random() * (canvas.width - 40) + 20;
+                    this.y = Math.random() * (canvas.height - 40) + 20;
+                    
+                    let sb = 0.5, sv = 1.5;
+                    if (this.type === 'red') { sb = 2.0; sv = 2.0; }
+                    else if (this.type === 'rainbow') { sb = 3.5; sv = 3.0; }
+
+                    const speed = sb + Math.random() * sv;
+                    const angle = Math.random() * Math.PI * 2;
+                    this.vx = Math.cos(angle) * speed; this.vy = Math.sin(angle) * speed;
+                    this.tvx = this.vx; this.tvy = this.vy;
+                }
+                update() {
+                    if (Math.random() < (this.type === 'rainbow' ? 0.1 : 0.03)) {
+                        const angle = Math.random() * Math.PI * 2;
+                        let s = 0.8 + Math.random() * 2;
+                        if (this.type === 'red') s = 2.0 + Math.random() * 2.5;
+                        if (this.type === 'rainbow') s = 3.5 + Math.random() * 3.0;
+                        this.tvx = Math.cos(angle) * s; this.tvy = Math.sin(angle) * s;
+                    }
+                    this.vx += (this.tvx - this.vx) * 0.1;
+                    this.vy += (this.tvy - this.vy) * 0.1;
+                    this.x += this.vx; this.y += this.vy;
+
+                    if (this.x < this.size || this.x > canvas.width - this.size) { this.vx *= -1; this.tvx *= -1; }
+                    if (this.y < this.size || this.y > canvas.height - this.size) { this.vy *= -1; this.tvy *= -1; }
+                    this.x = Math.max(this.size, Math.min(canvas.width - this.size, this.x));
+                    this.y = Math.max(this.size, Math.min(canvas.height - this.size, this.y));
+                }
+                draw() {
+                    if (this.type === 'red') ctx.fillStyle = '#ef4444';
+                    else if (this.type === 'rainbow') ctx.fillStyle = `hsl(${(Date.now() / 3) % 360}, 100%, 50%)`;
+                    else ctx.fillStyle = '#111827';
+
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(Math.atan2(this.vy, this.vx));
+                    
+                    const frame = Math.floor(Date.now() / 150) % 2;
+                    const p = this.size * 0.5;
+                    const off = (7 * p) / 2;
+                    const s1 = [[0,1,0,0,0,0,0],[0,0,1,1,0,1,0],[0,1,1,1,1,1,1],[1,1,1,0,1,1,1],[0,1,1,1,1,1,1],[0,0,1,1,0,1,0],[0,1,0,0,0,0,0]];
+                    const s2 = [[0,0,1,0,0,0,0],[0,1,1,1,0,0,1],[0,1,1,1,1,1,1],[1,1,1,0,1,1,1],[0,1,1,1,1,1,1],[0,1,1,1,0,0,1],[0,0,1,0,0,0,0]];
+                    const s = frame === 0 ? s1 : s2;
+                    
+                    for (let r=0; r<7; r++) for (let c=0; c<7; c++) if (s[r][c]) ctx.fillRect(c*p-off, r*p-off, p+0.5, p+0.5);
+                    ctx.restore();
+                }
+            }
+
+            function spawnBug() {
+                if(bugs.length < 10) bugs.push(new Bug());
+                if(gameActive) setTimeout(spawnBug, 1000 + Math.random() * 1500);
+            }
+
+            function loop() {
+                if (!gameActive) return;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                bugs.forEach(b => { b.update(); b.draw(); });
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    particles[i].update(); particles[i].draw();
+                    if (particles[i].life <= 0) particles.splice(i, 1);
+                }
+                loopId = requestAnimationFrame(loop);
+            }
+
+            startGameBtn.addEventListener('click', () => {
+                resizeCanvas();
+                gameActive = true; score = 0; bugs = []; particles = [];
+                scoreDisplay.textContent = `Squashed: ${score}`;
+                gameOverlay.classList.add('opacity-0', 'pointer-events-none');
+                gameControls.classList.remove('opacity-0', 'pointer-events-none');
+                for(let i=0; i<4; i++) bugs.push(new Bug()); 
+                spawnBug();
+                if (loopId) cancelAnimationFrame(loopId);
+                loop();
+            });
+
+            restartGameBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); score = 0; bugs = []; particles = [];
+                scoreDisplay.textContent = `Squashed: ${score}`;
+                for(let i=0; i<4; i++) bugs.push(new Bug());
+            });
+
+            endGameBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); gameActive = false;
+                if (loopId) cancelAnimationFrame(loopId);
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                gameControls.classList.add('opacity-0', 'pointer-events-none');
+                gameOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            });
+
+            const squash = (e) => {
+                if (!gameActive) return;
+                e.preventDefault(); // Strongly prevent touch scrolling
+                
+                const rect = canvas.getBoundingClientRect();
+                const cx = e.touches ? e.touches[0].clientX : e.clientX;
+                const cy = e.touches ? e.touches[0].clientY : e.clientY;
+                const mx = (cx - rect.left) * (canvas.width / rect.width);
+                const my = (cy - rect.top) * (canvas.height / rect.height);
+
+                for (let i = bugs.length - 1; i >= 0; i--) {
+                    const b = bugs[i];
+                    if (Math.hypot(mx - b.x, my - b.y) < b.size + 24) {
+                        const sq = bugs.splice(i, 1)[0];
+                        if (sq.type === 'rainbow') score += 5;
+                        else if (sq.type === 'red') score += 2;
+                        else score += 1;
+                        scoreDisplay.textContent = `Squashed: ${score}`;
+                        
+                        if (sq.type === 'normal') for(let p=0; p<6; p++) particles.push(new Particle(b.x, b.y, '#111827', 2, 15, 2));
+                        else if (sq.type === 'red') for(let p=0; p<15; p++) particles.push(new Particle(b.x, b.y, '#ef4444', 5, 25, 3));
+                        else if (sq.type === 'rainbow') for(let p=0; p<40; p++) particles.push(new Particle(b.x, b.y, `hsl(${Math.random()*360},100%,50%)`, 8, 40, 4));
+                        
+                        setTimeout(() => { if(gameActive && bugs.length < 8) bugs.push(new Bug()); }, 300);
+                        break;
+                    }
+                }
+            };
+
+            canvas.addEventListener('mousedown', squash);
+            canvas.addEventListener('touchstart', squash, { passive: false });
+        });
+    </script>
+</body>
+</html>
